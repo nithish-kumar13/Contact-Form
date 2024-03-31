@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import Logo from "./assets/logohms.png";
+import Form from "./components/Form";
 
 function App() {
+  const formData = [
+    { name: "name", label: "Name", type: "text", required: true },
+    { name: "mobile", label: "Mobile Number", type: "text", required: true },
+    { name: "email", label: "Email", type: "email", required: true },
+    { name: "message", label: "Message", type: "textarea", required: true },
+  ];
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="container">
+          <img src={Logo} alt="logo" />
+        </div>
       </header>
+
+      <main className="App-main">
+        <div className="container">
+          <h1 className="heading"> Contact us </h1>
+          <Form formData={formData} />
+        </div>
+      </main>
     </div>
   );
 }
